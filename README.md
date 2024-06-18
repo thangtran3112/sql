@@ -12,6 +12,7 @@
 
 ## Local PostgreSQL import of CSV files
 
+- Password: Password@123
 - [Download csv_files](https://drive.google.com/drive/folders/1moeWYoUtUklJO6NJdWo9OV8zWjRn0rjN) into VsCode workspace and Open pgAdmin
 - In Object Explorer (left-hand pane), navigate to `sql_course` database
 - Right-click `sql_course` and select `PSQL Tool`
