@@ -6,17 +6,17 @@ WHERE EXTRACT(MONTH FROM job_posted_date) = 1 AND NOT(salary_year_avg IS NULL);
 
 
 /*Create table for January data only*/
-CREATE TABLE january_jobs AS
+CREATE TABLE IF NOT EXISTS january_jobs AS
   SELECT *
   FROM job_postings_fact
   WHERE EXTRACT(MONTH FROM job_posted_date) = 1;
 
-CREATE TABLE february_jobs AS
+CREATE TABLE IF NOT EXISTS february_jobs AS
   SELECT *
   FROM job_postings_fact
   WHERE EXTRACT(MONTH FROM job_posted_date) = 2;
 
-  CREATE TABLE march_jobs AS
+CREATE TABLE IF NOT EXISTS march_jobs AS
   SELECT *
   FROM job_postings_fact
   WHERE EXTRACT(MONTH FROM job_posted_date) = 3;
