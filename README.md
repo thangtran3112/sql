@@ -5,14 +5,16 @@
 - Using SQL Tools with variable driver extensions to PostGreSQL, MySQL, SQLite, etc. We can use a single IDE to connect to multiple databases.
 - [SQLTools Extension](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools)
 - [SQLTools Postgres Driver Extension](https://marketplace.visualstudio.com/items?itemName=mtxr.sqltools-driver-pg)
+- Prettier SQL Formatter or SQL Tools formatter (which is built-in with SQL Tools).
 
 ## Connecting to PostgreSQL or any SQL database
 
 ![Create connection to local PostgreSQL](./images/SqlToolConnecting.png)
+![Saving your query results into CSV or JSON](./images/SqlToolSavingResult.png)
 
 ## Local PostgreSQL import of CSV files
 
-- Password: Password@123
+- Password: `Password@123`
 - [Download csv_files](https://drive.google.com/drive/folders/1moeWYoUtUklJO6NJdWo9OV8zWjRn0rjN) into VsCode workspace and Open pgAdmin
 - In Object Explorer (left-hand pane), navigate to `sql_course` database
 - Right-click `sql_course` and select `PSQL Tool`
