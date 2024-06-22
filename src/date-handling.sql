@@ -72,15 +72,25 @@ ORDER BY monthly_job DESC;
 
 
 SELECT 
-  COUNT(job_postings_fact.job_id),
   job_postings_fact.company_id,
-  company_dim.name
+  company_dim.name,
+  COUNT(job_postings_fact.job_id)
 FROM job_postings_fact
 LEFT JOIN company_dim ON company_dim.company_id = job_postings_fact.company_id
-  WHERE (job_health_insurance = TRUE) AND (EXTRACT(MONTH FROM job_posted_date AT TIME ZONE 'UTC') >= 7)
+  WHERE (job_health_insurance = TRUE) 
+    AND (EXTRACT(MONTH FROM job_posted_date AT TIME ZONE 'UTC') >= 4)
+    AND (EXTRACT(MONTH FROM job_posted_date AT TIME ZONE 'UTC') <= 6)
   GROUP BY job_postings_fact.company_id, company_dim.name
   HAVING COUNT(job_postings_fact.job_id) > 0
-  ORDER BY COUNT(job_postings_fact.job_id)
+  ORDER BY COUNT(job_postings_fact.job_id) DESC;
+
+  SELECT
+    COUNT(job_id) as job_posted_count,
+    EXTRACT(MONTH from job_posted_date) AS month
+  FROM job_postings_fact
+  WHERE job_title_short = 'Data Analyst'
+  GROUP BY month
+  ORDER BY job_posted_count DESC;
 
 
 
