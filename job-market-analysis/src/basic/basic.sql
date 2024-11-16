@@ -196,3 +196,5 @@ LEFT JOIN skills_job_dim AS skills_to_job_table ON skills_table.skill_id = skill
 LEFT JOIN job_postings_fact AS job_postings ON skills_to_job_table.job_id = job_postings.job_id
 GROUP BY
 	skills_table.skills
+ORDER BY
+	average_salary_for_skill DESC
